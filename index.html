@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Notes</title>
+    <link rel="icon" type="image/x-icon" href="check.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <div>
+                <h1 class="active" href="#todo">🐼 Panda Notes</a>
+            </div>
+            <div class="search-container">
+                <!-- <form > -->
+                  <!-- <input type="text" placeholder="Search.." name="search" id="search-box"> -->
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                <!-- </form> -->
+            </div>
+        </div> 
+    </header>
+    
+    <main>
+        <div class="task-add-block">
+            <div class="add">
+                <input type="text"  id="add-text-space"  placeholder="Add your to-do task..." class="add-text">
+            </div>
+            <div class="add">
+                <!-- <button id="schedule-button1"  class="icon-button"><span class="material-symbols-outlined" id="calendar-icon" class="icon">calendar_month</span></button> -->
+                <input type="date" id="date-picker" class="hidden-date-input1">
+                <!-- <button id="schedule-button2" class="icon-button"><span class="material-symbols-outlined">schedule</span></button> -->
+                <button id="purple-button" class="icon-button" style="float:right; background-color: rgb(216, 151, 236); border-radius: 10px;"><span class="material-symbols-outlined">add</span></button>
+                <input type="time" id="time-picker" class="hidden-date-input2">
+                
+               
+
+            </div>
+
+
+        </div>
+        <!-- calender -->
+
+        <div class="all-notes">
+            <div class="no-element-present">
+                <img src="https://static.vecteezy.com/system/resources/previews/032/208/905/original/cute-cartoon-panda-bear-saying-hello-illustration-isolated-on-white-background-vector.jpg" height="300px" width="300px" id="no-element-present" alt="No due task">
+                
+                
+                <label class="img_label">To-do List you add appear here</label>
+            </div>
+            <!-- 3dots -->
+            <div class="popup-box" id="popupBox"> 
+            <div class="popup-option" id="editOption">Edit</div>
+            <div class="popup-option" id="deleteOption">Delete</div>
+            <!-- 3dots  -->
+            
+            </div>
+            <!-- notes class and div -->
+        </div>
+    </main>
+    
+    <footer>
+        <div class="xop">
+            <input type="textarea" class="edit_text_input" placeholder="Write new text.....">
+            <button><span class="material-symbols-outlined">check_circle</span></button>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
