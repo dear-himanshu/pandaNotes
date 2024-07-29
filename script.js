@@ -79,12 +79,55 @@ document.getElementById('time-picker').addEventListener('click', () => {
     
 // };
 
+// took help from internet
+const dateTimeFunc = (dateTime) => {
+    // const [date, time] = dateTime.split(', ');
+    // const [day, month, year] = date.split('/').map(Number);
+    // const [hours, minutes, seconds] = time.split(':').map(Number);
+    const [year,month,day] = dateTime.split("-");
+
+    // if(v===1){
+    //   return new Date(year, month - 1, day, hours, minutes, seconds);
+    // }
+    const mo = getmonth(month);
+    const d = getDaySuffix(day);
+    return day+d+" "+mo+" "+year;
+    
+    
+};
+
+
+// Function ends here 
+const monthNames = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+
+const getmonth = (m) => {
+  
+  // console.log(typeof m);
+    return monthNames[m-1];
+
+}
+
+const getDaySuffix = (day) => {
+  if (day > 3 && day < 21) return 'th'; 
+  switch (day % 10) {
+      case 1: return "st";
+      case 2: return "nd";
+      case 3: return "rd";
+      default: return "th";
+  }
+}
+
 
 add_button.addEventListener("click", (event)=>{
 
     // retrieve date value ;
     let date_get = date_changer.value; 
     // time_data.textContent = date_get ;
+    // console.log(date_get);
+    // console.log(dateTimeFunc(date_get));
+    let dt = dateTimeFunc(date_get);
 
     let list_data = document.querySelector(".all-notes") ; 
     let list_message = document.querySelector("#add-text-space");
@@ -171,6 +214,9 @@ add_button.addEventListener("click", (event)=>{
 
     // const className_1 = date_get.replace(/-/g, "_");
     drop_div.classList.add(`dropdown-content${date_get}${time_get.replace(":","-")}`);
+
+    check_element.classList.add(`check-dropdown_in_action${date_get}-${time_get.replace(":","-")}` )
+
 
    
 
@@ -296,7 +342,7 @@ add_button.addEventListener("click", (event)=>{
 
 
         let heading_for_tab = document.createElement("h3");
-        heading_for_tab.textContent = `${date_get}`;
+        heading_for_tab.textContent = `${dt}`;
         // heading_for_tab.style.cssText = "font-family: Bebas Neue, sans-serif;font-weight: 400;font-style: normal; border-bottom: 1px solid grey ;box-shadow: 5px 5px 10px rgba(50, 50, 90, 0.25); border-radius: 5px" ;
 
         // let drop_down = document.createElement("input");
@@ -469,6 +515,22 @@ add_button.addEventListener("click", (event)=>{
     //         event.stopPropagation();
             
     //     });
+
+    let lpp  = document.querySelector(`.check-dropdown_in_action${date_get}-${time_get.replace(":","-")}`);
+    // if(isChecked(lpp)){
+    //     console.log("hle");
+    // }
+    lpp.addEventListener("click", (event)=>{
+        drp = Array.from(event.target.parentElement.parentElement.children);
+            
+            // event.stopPropagation();
+
+            console.log(drp[1]);
+                // drp[1].style.textDecoration = "line-through";
+                drp[1].classList.toggle("lop");
+ 
+            event.stopPropagation();
+    });
 
     
 
